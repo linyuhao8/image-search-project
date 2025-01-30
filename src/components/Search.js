@@ -1,10 +1,22 @@
 import { CalendarDaysIcon, HandRaisedIcon } from "@heroicons/react/24/outline";
 
-export default function Search({ search }) {
+export default function Search({
+  search,
+  searchQuery,
+  onInputChange,
+  buttonText,
+}) {
+  const buttonColor = searchQuery
+    ? "bg-indigo-500 hover:bg-indigo-400"
+    : "bg-btn hover:bg-btnHover"; // 根据是否有输入来改变按钮颜色
+  const borderColor = searchQuery
+    ? "focus:outline-1 focus:outline-indigo-400" // If there’s input, apply a focus color
+    : "focus:outline-1 focus:outline-btnHover"; // If no input, use a neutral border color
+
   return (
-    <div className="relative isolate overflow-hidden bg-gray-900 py-16 sm:py-24 lg:py-32">
+    <div className="relative isolate overflow-hidden bg-gray-900 py-16 sm:py-20 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
           <div className="max-w-xl lg:max-w-lg">
             <h2 className="text-4xl font-semibold tracking-tight text-white">
               Search the image for un pricing.
@@ -21,16 +33,19 @@ export default function Search({ search }) {
                 name="keyword"
                 type="text"
                 required
-                placeholder="Enter keyword"
+                placeholder="如果沒有輸入可以直接搜尋隨機圖片"
                 autoComplete="keyword"
-                className="min-w-0 flex-auto rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6"
+                className={`min-w-0 flex-auto rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 ${borderColor} sm:text-sm`}
+                value={searchQuery}
+                onChange={onInputChange}
               />
               <button
                 type="submit"
-                className="flex-none rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+                className={`flex-none rounded-md px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 ${buttonColor}`}
                 onClick={search}
+                value=""
               >
-                Search
+                {buttonText}
               </button>
             </div>
           </div>
@@ -43,11 +58,10 @@ export default function Search({ search }) {
                 />
               </div>
               <dt className="mt-4 text-base font-semibold text-white">
-                Weekly articles
+                探索無限創意圖片
               </dt>
               <dd className="mt-2 text-base/7 text-gray-400">
-                Non laboris consequat cupidatat laborum magna. Eiusmod non irure
-                cupidatat duis commodo amet.
+                無論你需要獨特的插圖、風景照，還是高質量的背景圖片，我們的搜尋引擎讓你輕鬆找到完美的圖片。只需輸入關鍵字，我們會提供大量符合需求的選項，幫助你迅速找到靈感。
               </dd>
             </div>
             <div className="flex flex-col items-start">
@@ -58,11 +72,10 @@ export default function Search({ search }) {
                 />
               </div>
               <dt className="mt-4 text-base font-semibold text-white">
-                No spam
+                按需搜尋您的圖片素材
               </dt>
               <dd className="mt-2 text-base/7 text-gray-400">
-                Officia excepteur ullamco ut sint duis proident non adipisicing.
-                Voluptate incididunt anim.
+                專為設計師、內容創作者和藝術家設計，這裡是你尋找圖片素材的最佳場所。無論是免費還是付費素材，我們的搜尋引擎能提供多樣化的選擇，讓你輕鬆找到符合專案需求的圖片。
               </dd>
             </div>
           </dl>
