@@ -26,8 +26,8 @@ app.get("/api/photos", async (req, res) => {
     console.log("Search Query:", searchQuery); // 輸出查詢參數
     console.log(randomNum);
     const url = searchQuery
-      ? `https://api.pexels.com/v1/search?query=${searchQuery}&per_page=10`
-      : `https://api.pexels.com/v1/curated?page=${randomNum}&per_page=10`;
+      ? `https://api.pexels.com/v1/search?query=${searchQuery}&per_page=15`
+      : `https://api.pexels.com/v1/curated?page=${randomNum}&per_page=15`;
 
     const result = await axios.get(url, {
       headers: {
