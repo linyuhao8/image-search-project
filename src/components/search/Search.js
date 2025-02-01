@@ -20,7 +20,11 @@ export default function Search({
               所有皆為無版權圖片，歡迎下載。
             </p>
             <div className="mt-6 flex max-w-md gap-x-4">
-              <Input onInputChange={onInputChange} searchQuery={searchQuery} />
+              <Input
+                onInputChange={onInputChange}
+                searchQuery={searchQuery}
+                search={search}
+              />
               <Button
                 search={search}
                 buttonText={buttonText}

@@ -1,7 +1,8 @@
-export default function Button({ search, searchQuery, buttonText }) {
+export default function Button({ search, searchQuery }) {
   const buttonColor = searchQuery
     ? "bg-indigo-500 hover:bg-indigo-400"
     : "bg-btn hover:bg-btnHover"; // 根据是否有输入来改变按钮颜色
+  
   return (
     <>
       <button
@@ -10,7 +11,7 @@ export default function Button({ search, searchQuery, buttonText }) {
         onClick={search}
         value=""
       >
-        {buttonText}
+        {searchQuery ?  "搜尋相關圖片" : "搜尋隨機圖片"}
       </button>
     </>
   );

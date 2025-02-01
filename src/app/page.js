@@ -9,7 +9,9 @@ export default function Home() {
   const [loading, setLoading] = useState(false); // 新增 loading 狀態
   const [searchQuery, setSearchQuery] = useState(""); // 搜尋關鍵字
   const [buttonText, setButtonText] = useState("搜尋隨機圖片"); // 初始按鈕文字
-
+  const handleEnter = (e) => {
+    console.log(e);
+  };
   const searchImg = async () => {
     setLoading(true); // 設置為 loading 狀態
     //模擬loading
@@ -30,12 +32,13 @@ export default function Home() {
   useEffect(() => {
     searchImg();
   }, []);
+
   // 監聽輸入變化
   const handleSearchInput = (e) => {
     const value = e.target.value;
     setSearchQuery(value);
-    setButtonText(value ? "搜尋相關圖片" : "搜尋隨機圖片");
   };
+
   return (
     <div>
       <Search
