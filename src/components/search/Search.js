@@ -2,12 +2,7 @@ import Button from "./Button";
 import HomeDescription from "./HomeDescription";
 import Input from "./Input";
 
-export default function Search({
-  search,
-  searchQuery,
-  onInputChange,
-  buttonText,
-}) {
+export default function Search({ search, searchQuery, onInputChange }) {
   return (
     <div className="relative isolate overflow-hidden bg-gray-900 py-16 sm:py-20 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -25,11 +20,7 @@ export default function Search({
                 searchQuery={searchQuery}
                 search={search}
               />
-              <Button
-                search={search}
-                buttonText={buttonText}
-                searchQuery={searchQuery}
-              />
+              <Button search={search} searchQuery={searchQuery} />
             </div>
           </div>
           <HomeDescription />

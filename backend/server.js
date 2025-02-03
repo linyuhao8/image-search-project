@@ -16,8 +16,10 @@ app.use(
   })
 );
 
-const photosRoute = require("./routes/photos");
-app.use("/api/photos",photosRoute)
+const randomRoute = require("./routes/random");
+app.use("/random", randomRoute);
+const searchRoute = require("./routes/search");
+app.use("/search", searchRoute);
 
 // 啟動伺服器
 app.listen(port, () => {

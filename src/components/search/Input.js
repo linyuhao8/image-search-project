@@ -5,7 +5,6 @@ export default function Input({ searchQuery, onInputChange, search }) {
   // 處理鍵盤按鍵事件
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
-      e.preventDefault(); // 防止預設行為（如換行）
       search();
     }
   };
