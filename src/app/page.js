@@ -1,5 +1,5 @@
 "use client";
-import Search from "../components/search/Search";
+import Search from "../components/searchComponent/Search";
 import ImageGrid from "../components/ImageGrid";
 import { useState, useEffect } from "react";
 import axios from "axios";

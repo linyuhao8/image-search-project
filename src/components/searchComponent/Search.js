@@ -1,15 +1,18 @@
 import Button from "./Button";
 import HomeDescription from "./HomeDescription";
 import Input from "./Input";
+import { useSearchParams } from "next/navigation";
 
 export default function Search({ search, searchQuery, onInputChange }) {
+  const searchParams = useSearchParams(); // 用於獲取查詢參數
+  const q = searchParams.get("q"); // 取得 'q' 參數
   return (
     <div className="relative isolate overflow-hidden bg-gray-900 py-16 sm:py-20 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-8 lg:max-w-none lg:grid-cols-2">
           <div className="max-w-xl lg:max-w-lg">
             <h2 className="text-4xl font-semibold tracking-tight text-white">
-              免費搜尋圖片
+              {q ? `搜尋結果：${q}` : "免費搜尋圖片"}
             </h2>
             <p className="mt-4 text-lg text-gray-300">
               所有皆為無版權圖片，歡迎下載。

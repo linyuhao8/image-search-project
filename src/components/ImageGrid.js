@@ -3,7 +3,7 @@ import Image from "next/image";
 import Masonry from "react-masonry-css";
 export default function Grid({ photos }) {
   const breakpointColumnsObj = {
-    default: 4, // 預設 5 列
+    default: 4  , // 預設 5 列
     1400: 4,
     1100: 3, // 當螢幕寬度小於 1100px 時，顯示 4 列
     700: 2, // 當螢幕寬度小於 700px 時，顯示 3 列
