@@ -24,7 +24,13 @@ const SearchPage = () => {
     <>
       <div>
         <Hero
-          search={handleSearchSubmit}
+          search={
+            searchQuery
+              ? handleSearchSubmit
+              : () => {
+                  window.location.href = "/";
+                }
+          }
           searchQuery={searchQuery}
           onInputChange={handleSearchInput}
         />
