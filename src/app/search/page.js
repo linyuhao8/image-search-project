@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from "react";
 import Hero from "@/components/hero/Hero";
 import ImageGrid from "../../components/ImageGrid";
-import useRandomImages from "@/hooks/useRandomImage";
 import useSearchImage from "@/hooks/useSearchImage";
 import useInfiniteScroll from "@/hooks/useInfiniteScroll";
 
@@ -15,6 +14,8 @@ const SearchPage = () => {
     handleSearchSubmit,
     firstLoad,
     fetchSearchResults,
+    errorMessage,
+    noResults,
   } = useSearchImage();
   // 只有在 q 或 page 改變時才執行搜尋
   useEffect(() => {
@@ -35,7 +36,7 @@ const SearchPage = () => {
           searchQuery={searchQuery}
           onInputChange={handleSearchInput}
         />
-        <div className="flex flex-col items-center justify-start min-h-screen bg-gray-800">
+        <div className="flex flex-col items-center justify-start bg-gray-800">
           {loading && firstLoad ? (
             <div className="flex flex-col items-center mt-10">
               <div className="w-10 h-10 border-4 border-gray-300 border-t-blue-500 rounded-full animate-spin"></div>
@@ -44,6 +45,19 @@ const SearchPage = () => {
           ) : (
             <>
               <ImageGrid photos={photos} />
+            </>
+          )}
+          {errorMessage && <div className="error-message">{errorMessage}</div>}
+          {noResults && !loading && (
+            <>
+              <h1 className="mb-4 mt-20 text-4xl font-extrabold leading-none tracking-tight text-gray-300 md:text-5xl lg:text-6xl dark:text-white">
+                您的{" "}
+                <span className="text-indigo-500 dark:text-blue-500">關鍵字</span>{" "}
+                沒有找到符合的圖片
+              </h1>
+              <p className="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">
+                您可能輸入亂碼或是沒意義的關罐字，請搜尋簡單明瞭的詞，如貓、cat。
+              </p>
             </>
           )}
         </div>

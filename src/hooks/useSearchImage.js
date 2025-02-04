@@ -12,6 +12,8 @@ const useSearch = () => {
   const [loading, setLoading] = useState(false);
   const [searchQuery, setSearchQuery] = useState(q || "");
   const [firstLoad, setFirstLoad] = useState(true);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [noResults, setNoResults] = useState(false);
 
   const handleSearchInput = (e) => {
     setSearchQuery(e.target.value);
@@ -30,6 +32,10 @@ const useSearch = () => {
       setPageNumber((prevPage) => prevPage + 1);
     } catch (error) {
       console.error("Error fetching search results:", error);
+      setErrorMessage(
+        "There was an error fetching the results. Please try again. error:" +
+          error
+      );
     } finally {
       setLoading(false);
     }
@@ -40,7 +46,7 @@ const useSearch = () => {
   // useEffect 監聽 pageNumber 更新
   useEffect(() => {
     console.log(pageNumber);
-    if (pageNumber > 1) {
+    if (pageNumber > 0) {
       // 只在 pageNumber 更新時請求
       const fetchData = async () => {
         try {
@@ -48,8 +54,9 @@ const useSearch = () => {
             params: { q: q, page: pageNumber }, // 使用最新的 pageNumber
           });
           let data = result.data.photos;
-          if (data === 0) {
+          if (data.length === 0) {
             console.log("搜尋關鍵字無效找不到東西。");
+            setNoResults(true);
           } else {
             setPhotos((prevPhotos) =>
               firstLoad ? data : [...prevPhotos, ...data]
@@ -71,6 +78,8 @@ const useSearch = () => {
     handleSearchSubmit,
     fetchSearchResults,
     firstLoad,
+    errorMessage,
+    noResults,
   };
 };
 

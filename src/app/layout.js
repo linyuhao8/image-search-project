@@ -8,7 +8,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="zh">
-      <body className="bg-gray-900">
+      <body className="bg-gray-800">
         <Header />
         {/* 根據 showHeader 控制是否顯示 Header */}
         {children}

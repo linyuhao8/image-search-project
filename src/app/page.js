@@ -24,7 +24,7 @@ export default function Home() {
         onInputChange={handleSearchInput}
         search={handleSearchSubmit}
       />
-      <div className="flex flex-col items-center justify-start min-h-screen bg-gray-800">
+      <div className="flex flex-col items-center justify-start bg-gray-800">
         {firstLoad && loading ? (
           <div className="flex flex-col items-center mt-10">
             <div className="w-10 h-10 border-4 border-gray-300 border-t-blue-500 rounded-full animate-spin"></div>

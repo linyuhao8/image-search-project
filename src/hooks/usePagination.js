@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const usePagination = () => {
-  const [pageNumber, setPageNumber] = useState(1);
+  const [pageNumber, setPageNumber] = useState(0);
   const [usedPageNumbers, setUsedPageNumbers] = useState([]);
 
   // 生成隨機頁數 (1-500)
