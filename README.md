@@ -118,10 +118,10 @@ This project is a **personal side project** aimed at practicing **frontend-backe
 - Dynamic API-based image retrieval (random and search modes)
 - Masonry-style image layout for a better user experience
 - **Frontend-backend separation**, with the backend handling API requests and protecting API keys
-
+- Implement **infinite scroll**
+- 
 ### Future Plans:
 
-- Implement **infinite scroll**
 - Add a **user favorites feature**
 - Integrate **more image sources**
 
@@ -234,9 +234,9 @@ This is an **open-source project**! If you're interested, feel free to contribut
 透過 API 動態獲取隨機圖片或搜尋圖片
 瀑布流式排版，確保良好的使用體驗
 前後端分離架構，後端負責 API 轉發並保護 API 金鑰
-未來可能會：
-
 增加 無限滾動加載（Infinite Scroll）
+
+未來可能會：
 提供 用戶收藏功能
 整合更多 圖片來源 API
 這是一個開源專案，如果你對這個專案有興趣，歡迎提供建議或進行改進！🎉
