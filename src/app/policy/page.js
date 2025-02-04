@@ -33,9 +33,12 @@ const Policy = () => {
           <div className="sm:mb-8 sm:flex sm:justify-center px-9">
             <div className="relative rounded-full px-6  py-1 text-sm text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
               搜尋所有你想要找到的美.{" "}
-              <a href="#" className="font-semibold text-indigo-600">
+              <a
+                href="localhost:3000"
+                className="font-semibold text-indigo-600"
+              >
                 <span aria-hidden="true" className="absolute inset-0" />
-                Read more <span aria-hidden="true">&rarr;</span>
+                首頁 <span aria-hidden="true">&rarr;</span>
               </a>
             </div>
           </div>

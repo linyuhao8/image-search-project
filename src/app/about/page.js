@@ -7,21 +7,20 @@ import Image from "next/image";
 
 const features = [
   {
-    name: "Push to deploy.",
-    description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
+    name: "功能",
+    description: "前後端分離架構，通過API實現圖片的隨機展示或關鍵字搜尋。",
     icon: CloudArrowUpIcon,
   },
   {
-    name: "SSL certificates.",
+    name: "直覺UI設計",
     description:
-      "Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.",
+      "簡單易用的界面設計，讓用戶快速搜尋並瀏覽圖片，提供流暢的使用體驗。",
     icon: LockClosedIcon,
   },
   {
-    name: "Database backups.",
+    name: "無限加載",
     description:
-      "Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.",
+      "點擊「載入更多」後，會持續加載隨機圖片或搜尋結果，實現無限滾動功能。",
     icon: ServerIcon,
   },
 ];
@@ -34,15 +33,17 @@ export default function About() {
           <div className="lg:pt-4 lg:pr-8">
             <div className="lg:max-w-lg">
               <h2 className="text-base/7 font-semibold text-indigo-300">
-                Deploy faster
+                找到絕佳照片
               </h2>
               <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-200 sm:text-5xl">
-                A better workflow
+                Image Search
               </p>
               <p className="mt-6 text-lg/8 text-gray-300">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Maiores impedit perferendis suscipit eaque, iste dolor
-                cupiditate blanditiis ratione.
+                本作品為本人開發的 Side Project，主要目的是練習
+                前後端分離架構，並整合第三方
+                API（Pexels）來打造一個流暢的圖片搜尋網站。這個專案幫助我更熟悉
+                Next.js、Express、API 整合、React Masonry
+                瀑布流排版、環境變數管理 (.env) 等技術。
               </p>
               <dl className="mt-10 max-w-xl space-y-8 text-base/7 text-gray-400 lg:max-w-none">
                 {features.map((feature) => (
