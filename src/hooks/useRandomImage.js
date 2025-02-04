@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import usePagination from "./usePagination";
 
@@ -12,8 +12,8 @@ const useRandomImages = () => {
   const fetchRandomImages = async () => {
     setLoading(true);
     try {
+      let isFirstLoad = firstLoad;
       let currentPage = pageNumber;
-
       if (firstLoad) {
         const randomPage = generateRandomPage();
         setNewPage(randomPage);
@@ -26,20 +26,28 @@ const useRandomImages = () => {
         setNewPage(newRandomPage);
         currentPage = newRandomPage;
       }
-
+      console.log(currentPage);
       const result = await axios.get("http://localhost:5001/random", {
         params: { page: currentPage },
       });
       setFirstLoad(false);
       setPhotos((prevPhotos) =>
-        firstLoad ? result.data.photos : [...prevPhotos, ...result.data.photos]
+        isFirstLoad
+          ? result.data.photos
+          : [...prevPhotos, ...result.data.photos]
       );
+      if (isFirstLoad) {
+        isFirstLoad = false;
+      }
     } catch (error) {
       console.error("Error fetching random images:", error);
     } finally {
       setLoading(false);
     }
   };
+  useEffect(() => {
+    console.log("Updated photos:", photos);
+  }, [photos]);
 
   return { photos, loading, fetchRandomImages, firstLoad };
 };

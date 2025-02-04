@@ -4,6 +4,7 @@ import ImageGrid from "../components/ImageGrid";
 import { useState, useEffect } from "react";
 import useRandomImages from "@/hooks/useRandomImage";
 import useSearchImage from "@/hooks/useSearchImage";
+import useInfiniteScroll from "@/hooks/useInfiniteScroll";
 
 export default function Home() {
   const { photos, loading, firstLoad, fetchRandomImages } = useRandomImages();
@@ -14,6 +15,7 @@ export default function Home() {
   useEffect(() => {
     fetchRandomImages(); // 使用 fetchRandomImages 函式來取得隨機圖片
   }, []); // 只會在首次載入時執行一次
+  useInfiniteScroll(fetchRandomImages, loading);
 
   return (
     <div>
@@ -31,14 +33,6 @@ export default function Home() {
         ) : (
           <>
             <ImageGrid photos={photos} />
-
-            <button
-              type="button"
-              className="flex-none rounded-md grow-1 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 bg-indigo-400"
-              onClick={fetchRandomImages} // 綁定搜尋按鈕，觸發圖片加載
-            >
-              Load more
-            </button>
           </>
         )}
       </div>

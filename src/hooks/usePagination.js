@@ -13,17 +13,13 @@ const usePagination = () => {
     setUsedPageNumbers((prev) => [...prev, newPage]);
   };
 
-  // 下一頁
-  const nextPage = () => {
-    setNewPage(pageNumber + 1);
-  };
-
   return {
     pageNumber,
+    setPageNumber,
     usedPageNumbers,
+    setUsedPageNumbers,
     generateRandomPage,
     setNewPage,
-    nextPage,
   };
 };
 

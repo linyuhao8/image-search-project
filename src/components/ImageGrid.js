@@ -25,8 +25,9 @@ export default function Grid({ photos }) {
                 width={photo.width}
                 height={photo.height}
                 alt={photo?.alt || "image"}
-                className="rounded-lg object-cover"
-                priority
+                className="rounded-lg"
+                style={{ objectFit: "cover" }}
+                priority={true}
               />
             </a>
           </div>
