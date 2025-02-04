@@ -1,9 +1,9 @@
 import Button from "./Button";
-import HomeDescription from "./HomeDescription";
+import HomeDescription from "./Description";
 import Input from "./Input";
 import { useSearchParams } from "next/navigation";
 
-export default function Search({ search, searchQuery, onInputChange }) {
+export default function Hero({ search, searchQuery, onInputChange }) {
   const searchParams = useSearchParams(); // 用於獲取查詢參數
   const q = searchParams.get("q"); // 取得 'q' 參數
   return (
