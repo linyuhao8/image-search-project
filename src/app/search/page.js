@@ -47,18 +47,27 @@ const SearchPage = () => {
               <ImageGrid photos={photos} />
             </>
           )}
-          {errorMessage && <div className="error-message">{errorMessage}</div>}
-          {noResults && !loading && (
-            <>
-              <h1 className="mb-4 mt-20 text-4xl font-extrabold leading-none tracking-tight text-gray-300 md:text-5xl lg:text-6xl dark:text-white">
-                您的{" "}
-                <span className="text-indigo-500 dark:text-blue-500">關鍵字</span>{" "}
-                沒有找到符合的圖片
+          {(errorMessage || (noResults && !loading)) && (
+            <div className="error-message text-center mt-20">
+              <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-300 md:text-5xl lg:text-6xl dark:text-white">
+                {errorMessage ? (
+                  <span className="text-red-500">發生錯誤</span>
+                ) : (
+                  <>
+                    您的{" "}
+                    <span className="text-indigo-500 dark:text-blue-500">
+                      關鍵字
+                    </span>{" "}
+                    沒有找到符合的圖片
+                  </>
+                )}
               </h1>
-              <p className="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">
-                您可能輸入亂碼或是沒意義的關罐字，請搜尋簡單明瞭的詞，如貓、cat。
+              <p className="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400 mb-20">
+                {errorMessage
+                  ? "請稍後再試，或聯繫網站管理員。"
+                  : "您可能輸入了無效的關鍵字，請搜尋簡單明瞭的詞，如貓、cat。"}
               </p>
-            </>
+            </div>
           )}
         </div>
       </div>

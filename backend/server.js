@@ -22,6 +22,6 @@ const searchRoute = require("./routes/search");
 app.use("/search", searchRoute);
 
 // 啟動伺服器
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+app.listen(5001, () => {
+  console.log(`Server is running on http://localhost:5001`);
 });
