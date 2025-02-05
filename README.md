@@ -83,10 +83,10 @@ The backend provides two API routes for image requests:
 
    ```bash
    cd image-search-project
-   npm install
+   npm run dev
 
    cd backend
-   npm install
+   node server.js
    ```
 
 3. Configure the `.env` file in the backend and add your Pexels API key.
@@ -201,10 +201,10 @@ This is an **open-source project**! If you're interested, feel free to contribut
 
    ```bash
    cd image-search-project
-   npm install
+   npm run dev
 
    cd backend
-   npm install
+   node server.js
    ```
 
 3. 在後端設定 `.env` 文件，並將 Pexels API 金鑰加入其中。
