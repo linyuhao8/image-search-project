@@ -89,7 +89,7 @@ The backend provides two API routes for image requests:
    node server.js
    ```
 
-3. Configure the `.env` file in the backend and add your Pexels API key.
+3. Add a new `.env` file under the backend datashelf and add the Pexels API key to it in the format `IMAGE_API_KEY=API key`, which will be handled automatically by the backend.
 
 4. Start the frontend:
 
@@ -207,9 +207,9 @@ This is an **open-source project**! If you're interested, feel free to contribut
    node server.js
    ```
 
-3. 在後端設定 `.env` 文件，並將 Pexels API 金鑰加入其中。
+3. 在backend資料架下新增 `.env` 文件，並將 Pexels API 金鑰加入其中，格式為`IMAGE_API_KEY=API key`，後端後將會自動處理。
 
-4. 啟動前端：
+5. 啟動前端：
 
    ```bash
    npm run dev
@@ -217,7 +217,7 @@ This is an **open-source project**! If you're interested, feel free to contribut
 
    前端將會在 `http://localhost:3000` 運行。
 
-5. 啟動後端：
+6. 啟動後端：
 
    ```bash
    npm start
