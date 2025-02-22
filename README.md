@@ -207,9 +207,9 @@ This is an **open-source project**! If you're interested, feel free to contribut
    node server.js
    ```
 
-3. 在backend資料架下新增 `.env` 文件，並將 Pexels API 金鑰加入其中，格式為`IMAGE_API_KEY=API key`，後端後將會自動處理。
+3. 在 backend 資料架下新增 `.env` 文件，並將 Pexels API 金鑰加入其中，格式為`IMAGE_API_KEY=API key`，後端後將會自動處理。
 
-5. 啟動前端：
+4. 啟動前端：
 
    ```bash
    npm run dev
@@ -217,7 +217,7 @@ This is an **open-source project**! If you're interested, feel free to contribut
 
    前端將會在 `http://localhost:3000` 運行。
 
-6. 啟動後端：
+5. 啟動後端：
 
    ```bash
    npm start
