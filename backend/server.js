@@ -21,7 +21,6 @@ app.use("/random", randomRoute);
 const searchRoute = require("./routes/search");
 app.use("/search", searchRoute);
 
-app.get("/", console.log("used"));
 // 啟動伺服器
 app.listen(5001, () => {
   console.log(`Server is running on http://localhost:5001`);

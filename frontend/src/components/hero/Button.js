@@ -9,7 +9,6 @@ export default function Button({ search, searchQuery }) {
         type="button"
         className={`flex-none rounded-md grow-1 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 ${buttonColor}`}
         onClick={search}
-        value=""
       >
         {searchQuery ? "搜尋相關圖片" : "搜尋隨機圖片"}
       </button>

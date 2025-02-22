@@ -20,7 +20,11 @@ const useSearch = () => {
   };
 
   const handleSearchSubmit = () => {
-    window.location.href = `/search/?q=${encodeURIComponent(searchQuery)}`;
+    if (q) {
+      window.location.href = `/search/?q=${encodeURIComponent(searchQuery)}`;
+    } else {
+      window.location.href = "/";
+    }
   };
 
   const fetchSearchResults = async () => {
