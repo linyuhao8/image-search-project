@@ -83,13 +83,13 @@ The backend provides two API routes for image requests:
 
    ```bash
    cd image-search-project
-   npm install
+   npm run dev
 
    cd backend
-   npm install
+   node server.js
    ```
 
-3. Configure the `.env` file in the backend and add your Pexels API key.
+3. Add a new `.env` file under the backend datashelf and add the Pexels API key to it in the format `IMAGE_API_KEY=API key`, which will be handled automatically by the backend.
 
 4. Start the frontend:
 
@@ -118,10 +118,10 @@ This project is a **personal side project** aimed at practicing **frontend-backe
 - Dynamic API-based image retrieval (random and search modes)
 - Masonry-style image layout for a better user experience
 - **Frontend-backend separation**, with the backend handling API requests and protecting API keys
+- Implement **infinite scroll**
 
 ### Future Plans:
 
-- Implement **infinite scroll**
 - Add a **user favorites feature**
 - Integrate **more image sources**
 
@@ -201,15 +201,15 @@ This is an **open-source project**! If you're interested, feel free to contribut
 
    ```bash
    cd image-search-project
-   npm install
+   npm run dev
 
    cd backend
-   npm install
+   node server.js
    ```
 
-3. 在後端設定 `.env` 文件，並將 Pexels API 金鑰加入其中。
+3. 在backend資料架下新增 `.env` 文件，並將 Pexels API 金鑰加入其中，格式為`IMAGE_API_KEY=API key`，後端後將會自動處理。
 
-4. 啟動前端：
+5. 啟動前端：
 
    ```bash
    npm run dev
@@ -217,7 +217,7 @@ This is an **open-source project**! If you're interested, feel free to contribut
 
    前端將會在 `http://localhost:3000` 運行。
 
-5. 啟動後端：
+6. 啟動後端：
 
    ```bash
    npm start
@@ -231,12 +231,13 @@ This is an **open-source project**! If you're interested, feel free to contribut
 
 目前的功能包含：
 
-透過 API 動態獲取隨機圖片或搜尋圖片
-瀑布流式排版，確保良好的使用體驗
-前後端分離架構，後端負責 API 轉發並保護 API 金鑰
-未來可能會：
+- 透過 API 動態獲取隨機圖片或搜尋圖片
+- 瀑布流式排版
+- 前後端分離架構，後端負責 API 轉發並保護 API 金鑰
+- 無限滾動加載（Infinite Scroll）
+- 關鍵字無效結果
 
-增加 無限滾動加載（Infinite Scroll）
+未來可能會：
 提供 用戶收藏功能
 整合更多 圖片來源 API
 這是一個開源專案，如果你對這個專案有興趣，歡迎提供建議或進行改進！🎉
