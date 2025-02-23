@@ -6,6 +6,14 @@
 
 This is an image search website built using React and Next.js for the frontend, with an Express backend. It integrates with the Pexels API to display random images or search results. The frontend sends API requests to retrieve images while maintaining a **frontend-backend separation**.
 
+# UI Preview
+https://github.com/linyuhao8/image-search-project/blob/main/frontend/public/image-search-ui1.png
+https://github.com/linyuhao8/image-search-project/blob/main/frontend/public/image-search-ui2.png
+https://github.com/linyuhao8/image-search-project/blob/main/frontend/public/image-search-ui3.png
+https://github.com/linyuhao8/image-search-project/blob/main/frontend/public/image-search-ui4.png
+https://github.com/linyuhao8/image-search-project/blob/main/frontend/public/image-search-ui5.png
+https://github.com/linyuhao8/image-search-project/blob/main/frontend/public/image-search-ui6.png
+
 ## Features
 
 ### 1. **Homepage**
@@ -134,6 +142,15 @@ This is an **open-source project**! If you're interested, feel free to contribut
 # 圖片搜尋網站
 
 這是一個使用 React 和 Next.js 建立的圖片搜尋網站，後端使用 Express。該網站與 Pexels API 整合，顯示隨機圖片或搜尋結果。前後端分離，前端發送 API 請求來獲取圖片。
+
+# UI 預覽
+https://github.com/linyuhao8/image-search-project/blob/main/frontend/public/image-search-ui1.png
+https://github.com/linyuhao8/image-search-project/blob/main/frontend/public/image-search-ui2.png
+https://github.com/linyuhao8/image-search-project/blob/main/frontend/public/image-search-ui3.png
+https://github.com/linyuhao8/image-search-project/blob/main/frontend/public/image-search-ui4.png
+https://github.com/linyuhao8/image-search-project/blob/main/frontend/public/image-search-ui5.png
+https://github.com/linyuhao8/image-search-project/blob/main/frontend/public/image-search-ui6.png
+
 
 ## 功能
 
