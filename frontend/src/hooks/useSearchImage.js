@@ -20,7 +20,7 @@ const useSearch = () => {
   };
 
   const handleSearchSubmit = () => {
-    if (q) {
+    if (searchQuery.trim()) {
       window.location.href = `/search/?q=${encodeURIComponent(searchQuery)}`;
     } else {
       window.location.href = "/";
