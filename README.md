@@ -7,12 +7,12 @@
 This is an image search website built using React and Next.js for the frontend, with an Express backend. It integrates with the Pexels API to display random images or search results. The frontend sends API requests to retrieve images while maintaining a **frontend-backend separation**.
 
 # UI Preview
-https://github.com/linyuhao8/image-search-project/blob/main/frontend/public/image-search-ui1.png
-https://github.com/linyuhao8/image-search-project/blob/main/frontend/public/image-search-ui2.png
-https://github.com/linyuhao8/image-search-project/blob/main/frontend/public/image-search-ui3.png
-https://github.com/linyuhao8/image-search-project/blob/main/frontend/public/image-search-ui4.png
-https://github.com/linyuhao8/image-search-project/blob/main/frontend/public/image-search-ui5.png
-https://github.com/linyuhao8/image-search-project/blob/main/frontend/public/image-search-ui6.png
+![image](https://github.com/linyuhao8/image-search-project/blob/main/frontend/public/image-search-ui1.png)
+![image](https://github.com/linyuhao8/image-search-project/blob/main/frontend/public/image-search-ui2.png)
+![image](https://github.com/linyuhao8/image-search-project/blob/main/frontend/public/image-search-ui3.png)
+![image](https://github.com/linyuhao8/image-search-project/blob/main/frontend/public/image-search-ui4.png)
+![image](https://github.com/linyuhao8/image-search-project/blob/main/frontend/public/image-search-ui5.png)
+![image](https://github.com/linyuhao8/image-search-project/blob/main/frontend/public/image-search-ui6.png)
 
 ## Features
 
