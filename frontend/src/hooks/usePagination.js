@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const usePagination = () => {
   const [pageNumber, setPageNumber] = useState(0);

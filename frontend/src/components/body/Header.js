@@ -22,15 +22,19 @@ export default function Header() {
   const pathname = usePathname();
 
   const navigation = [
-    { name: "首頁", href: "http://localhost:3000", current: pathname === "/" },
+    {
+      name: "首頁",
+      href: `${process.env.NEXT_PUBLIC_API_URL}`,
+      current: pathname === "/",
+    },
     {
       name: "關於我們",
-      href: "http://localhost:3000/about",
+      href: `${process.env.NEXT_PUBLIC_API_URL}/about`,
       current: pathname === "/about",
     },
     {
       name: "政策",
-      href: "http://localhost:3000/policy",
+      href: `${process.env.NEXT_PUBLIC_API_URL}/policy`,
       current: pathname === "/policy",
     },
   ];
@@ -55,7 +59,9 @@ export default function Header() {
           </div>
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex shrink-0 items-center">
-              <Link href="/" className="font-extrabold text-white">LOGO</Link>
+              <Link href="/" className="font-extrabold text-white">
+                LOGO
+              </Link>
             </div>
             <div className="hidden sm:ml-6 sm:block">
               <div className="flex space-x-4">

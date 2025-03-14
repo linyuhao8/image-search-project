@@ -26,10 +26,19 @@ const useRandomImages = () => {
         setNewPage(newRandomPage);
         currentPage = newRandomPage;
       }
-      console.log(currentPage);
-      const result = await axios.get("http://localhost:5001/random", {
-        params: { page: currentPage },
-      });
+
+      const result = await axios.get(
+        `${process.env.NEXT_PUBLIC_API_URL}/random`,
+        {
+          params: { page: currentPage },
+        }
+      );
+      console.log(
+        "Making request to:",
+        `${process.env.NEXT_PUBLIC_API_URL}/random?page=${encodeURIComponent(
+          currentPage
+        )}`
+      );
       setFirstLoad(false);
       setPhotos((prevPhotos) =>
         isFirstLoad

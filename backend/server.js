@@ -12,7 +12,7 @@ const port = process.env.PORT;
 app.use(express.json());
 app.use(
   cors({
-    origin: "http://localhost:3000", // 設置允許的來源
+    origin: "*",
   })
 );
 
@@ -22,6 +22,6 @@ const searchRoute = require("./routes/search");
 app.use("/search", searchRoute);
 
 // 啟動伺服器
-app.listen(5001, () => {
-  console.log(`Server is running on http://localhost:5001`);
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}/random`);
 });

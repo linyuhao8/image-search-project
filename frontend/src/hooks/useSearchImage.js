@@ -22,6 +22,7 @@ const useSearch = () => {
   const handleSearchSubmit = () => {
     if (searchQuery.trim()) {
       window.location.href = `/search/?q=${encodeURIComponent(searchQuery)}`;
+     
     } else {
       window.location.href = "/";
     }
@@ -54,9 +55,18 @@ const useSearch = () => {
       // 只在 pageNumber 更新時請求
       const fetchData = async () => {
         try {
-          const result = await axios.get("http://localhost:5001/search", {
-            params: { q: q, page: pageNumber }, // 使用最新的 pageNumber
-          });
+          const result = await axios.get(
+            `${process.env.NEXT_PUBLIC_API_URL}/search`,
+            {
+              params: { q: q, page: pageNumber }, // 使用最新的 pageNumber
+            }
+          );
+          console.log(
+            "Making request to:",
+            `${process.env.NEXT_PUBLIC_API_URL}?q=${encodeURIComponent(
+              q
+            )}&page=${encodeURIComponent(pageNumber)}`
+          );
           let data = result.data.photos;
           if (data.length === 0) {
             console.log("搜尋關鍵字無效找不到東西。");
