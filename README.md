@@ -1,7 +1,3 @@
----
-### English README
----
-
 # Image Search Website
 
 This is an image search website built using React and Next.js for the frontend, with an Express backend. It integrates with the Pexels API to display random images or search results. The frontend sends API requests to retrieve images while maintaining a **frontend-backend separation**.
