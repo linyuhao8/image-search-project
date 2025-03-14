@@ -24,17 +24,17 @@ export default function Header() {
   const navigation = [
     {
       name: "首頁",
-      href: `${process.env.NEXT_PUBLIC_API_URL}`,
+      href: `${process.env.NEXT_PUBLIC_URL}`,
       current: pathname === "/",
     },
     {
       name: "關於我們",
-      href: `${process.env.NEXT_PUBLIC_API_URL}/about`,
+      href: `${process.env.NEXT_PUBLIC_URL}/about`,
       current: pathname === "/about",
     },
     {
       name: "政策",
-      href: `${process.env.NEXT_PUBLIC_API_URL}/policy`,
+      href: `${process.env.NEXT_PUBLIC_URL}/policy`,
       current: pathname === "/policy",
     },
   ];

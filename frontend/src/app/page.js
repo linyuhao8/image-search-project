@@ -1,15 +1,19 @@
 "use client";
 import Hero from "../components/hero/Hero";
 import ImageGrid from "../components/ImageGrid";
-import { useState, useEffect } from "react";
+import { useEffect, Suspense } from "react";
 import useRandomImages from "@/hooks/useRandomImage";
 import useSearchImage from "@/hooks/useSearchImage";
 import useInfiniteScroll from "@/hooks/useInfiniteScroll";
+import { useSearchParams } from "next/navigation";
 
-export default function Home() {
+const HomeContent = () => {
+  const searchParams = useSearchParams();
+  const q = searchParams.get("q") || "";
   const { photos, loading, firstLoad, fetchRandomImages } = useRandomImages();
-  const { searchQuery, handleSearchInput, handleSearchSubmit } =
-    useSearchImage();
+  const { searchQuery, handleSearchInput, handleSearchSubmit } = useSearchImage(
+    { q }
+  );
 
   // 頁面載入時自動執行隨機圖片獲取
   useEffect(() => {
@@ -38,4 +42,14 @@ export default function Home() {
       </div>
     </div>
   );
-}
+};
+
+const Home = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <HomeContent />
+    </Suspense>
+  );
+};
+
+export default Home;

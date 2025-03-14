@@ -1,11 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useSearchParams } from "next/navigation";
 import usePagination from "./usePagination";
 
-const useSearch = () => {
-  const searchParams = useSearchParams();
-  const q = searchParams.get("q");
+const useSearchimage = ({ q }) => {
   const { pageNumber, setPageNumber, usedPageNumbers, setUsedPageNumbers } =
     usePagination();
   const [photos, setPhotos] = useState([]);
@@ -22,7 +19,6 @@ const useSearch = () => {
   const handleSearchSubmit = () => {
     if (searchQuery.trim()) {
       window.location.href = `/search/?q=${encodeURIComponent(searchQuery)}`;
-     
     } else {
       window.location.href = "/";
     }
@@ -50,7 +46,6 @@ const useSearch = () => {
   }, [photos]);
   // useEffect 監聽 pageNumber 更新
   useEffect(() => {
-    console.log(pageNumber);
     if (pageNumber > 0) {
       // 只在 pageNumber 更新時請求
       const fetchData = async () => {
@@ -97,4 +92,4 @@ const useSearch = () => {
   };
 };
 
-export default useSearch;
+export default useSearchimage;
