@@ -118,7 +118,9 @@ touch .env
 According to the front-end PORT.
 ```
 .env
-#According to the front-end PORT
+#frontend URL
+NEXT_PUBLIC_URL=http://localhost:3000
+#backend URL
 NEXT_PUBLIC_API_URL=http://localhost:5001
 ```
 5. Start the frontend:
