@@ -47,6 +47,7 @@ This is an image search website built using React and Next.js for the frontend, 
 ## API Routes
 
 The backend provides two API routes for image requests:
+On the image display page you can open the DevTools checking console and whenever the API is requested, there will be routing information and an array of images on it.
 
 - **Random Images:**
 
@@ -87,34 +88,46 @@ The backend provides two API routes for image requests:
 
 ## Setup Instructions
 
-1. Clone this repository.
-2. Install dependencies for both the frontend and backend:
+1.Clone this repository.
+```bash
+git clone https://github.com/linyuhao8/image-search-project.git
+cd image-search-project
+```
+2.Add a new file `.env` to /server. Reference env.sample.
+```bash
+cd server
+touch .env
+```
+Fill in the API key https://www.pexels.com/api/
+```
+.env
 
-   ```bash
-   cd image-search-project
-   npm run dev
-
-   cd backend
-   node server.js
-   ```
-
-3. Add a new `.env` file under the backend datashelf and add the Pexels API key to it in the format `IMAGE_API_KEY=API key`, which will be handled automatically by the backend.
-
-4. Start the frontend:
-
-   ```bash
-   npm run dev
-   ```
-
-   The frontend will run on `http://localhost:3000`.
-
-5. Start the backend:
-
-   ```bash
-   npm start
-   ```
-
-   The backend will run on `http://localhost:5001`.
+#Backend Port
+PORT=5001
+#Api key https://www.pexels.com/api/
+IMAGE_API_KEY=yourkey
+```
+3.start backend
+```bash
+npm start
+```
+The backend will run on `http://localhost:5001`.
+4. Add a new file `.env` to /client. Reference env.sample.
+```bash
+cd client
+touch .env
+```
+According to the front-end PORT.
+```
+.env
+#According to the front-end PORT
+NEXT_PUBLIC_API_URL=http://localhost:5001
+```
+5. Start the frontend:
+```bash
+npm run dev
+```
+The frontend will run on `http://localhost:3000`.
 
 ---
 
