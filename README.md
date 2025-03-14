@@ -96,6 +96,7 @@ cd image-search-project
 2.Add a new file `.env` to /server. Reference env.sample.
 ```bash
 cd server
+npm install
 touch .env
 ```
 Fill in the API key https://www.pexels.com/api/
@@ -115,6 +116,7 @@ The backend will run on `http://localhost:5001`.
 4. Add a new file `.env` to /client. Reference env.sample.
 ```bash
 cd client
+npm install
 touch .env
 ```
 According to the front-end PORT.
