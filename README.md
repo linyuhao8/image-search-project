@@ -90,7 +90,7 @@ On the image display page you can open the DevTools checking console and wheneve
 1.Clone this repository.
 ```bash
 git clone https://github.com/linyuhao8/image-search-project.git
-touch .env
+cd image-search-project
 ```
 2.Add a new file `.env` to /server. Reference env.sample.
 ```bash
@@ -98,7 +98,9 @@ cd server
 touch .env
 ```
 Fill in the API key https://www.pexels.com/api/
-```.env.sample
+```
+.env
+
 #Backend Port
 PORT=5001
 #Api key https://www.pexels.com/api/
@@ -115,7 +117,8 @@ cd client
 touch .env
 ```
 According to the front-end PORT.
-```.env.sample
+```
+.env
 #According to the front-end PORT
 NEXT_PUBLIC_API_URL=http://localhost:5001
 ```
